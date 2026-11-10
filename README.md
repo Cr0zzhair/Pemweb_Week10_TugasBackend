@@ -1,2 +1,2 @@
 # Sweet Bakery store
-Saya sudah maju presentasi
+Saya sudah maju demonstrasi
