@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🍰 Sweet Bakery - Toko Kue</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- ========== HEADER ========== -->
+  <header>
+    <div class="header-content">
+      <h1>🍰 Bluberry Pastry</h1>
+      <p>Manajemen Produk Toko Kue</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- ========== FORM TAMBAH / EDIT KUE ========== -->
+    <section class="form-section">
+      <h2 id="form-title">➕ Tambah Kue Baru</h2>
+      <form id="cake-form">
+        <input type="hidden" id="cake-id" />
+
+        <div class="form-group">
+          <label for="nama">Nama Kue</label>
+          <input type="text" id="nama" placeholder="Contoh: Red Velvet Cake" required />
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="kategori">Kategori</label>
+            <select id="kategori" required>
+              <option value="">-- Pilih Kategori --</option>
+              <option value="Cake">Cake</option>
+              <option value="Pastry">Pastry</option>
+              <option value="Roti">Roti</option>
+              <option value="Donat">Donat</option>
+              <option value="Cookies">Cookies</option>
+              <option value="Kue Tradisional">Kue Tradisional</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="harga">Harga (Rp)</label>
+            <input type="number" id="harga" placeholder="Contoh: 50000" min="0" required />
+          </div>
+          <div class="form-group">
+            <label for="stok">Stok</label>
+            <input type="number" id="stok" placeholder="Contoh: 20" min="0" required />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="deskripsi">Deskripsi</label>
+          <textarea id="deskripsi" rows="3" placeholder="Deskripsi singkat tentang kue..."></textarea>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" id="btn-submit" class="btn btn-primary">
+            💾 Simpan
+          </button>
+          <button type="button" id="btn-cancel" class="btn btn-secondary" style="display:none;" onclick="resetForm()">
+            ❌ Batal
+          </button>
+        </div>
+      </form>
+    </section>
+
+    <!-- ========== DAFTAR KUE ========== -->
+    <section class="list-section">
+      <div class="list-header">
+        <h2>🧁 Daftar Produk Kue</h2>
+        <span id="total-badge" class="badge">0 produk</span>
+      </div>
+
+      <div id="cake-list" class="cake-grid">
+        <!-- Card kue akan di-render oleh JavaScript -->
+      </div>
+
+      <div id="empty-state" class="empty-state" style="display:none;">
+        <span class="empty-icon">🎂</span>
+        <p>Belum ada produk kue. Tambahkan kue pertamamu!</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer>
+    <p>&copy; 2026 Sweet Bakery &mdash; Dibuat dengan Express.js & ❤️</p>
+  </footer>
+
+  <!-- ========== TOAST NOTIFICATION ========== -->
+  <div id="toast" class="toast"></div>
+
+  <script src="app.js"></script>
+</body>
+
+</html>
